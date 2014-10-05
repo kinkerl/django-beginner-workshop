@@ -1,0 +1,127 @@
+
+h1 {
+	font-size: 70px;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+
+	font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+	xfont-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    margin: auto;
+}
+
+p, li {
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+
+
+body {
+	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+	font-weight: normal;
+	color: #404040;
+	background-image: url('../../_static/bg.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+
+pre {
+	line-height: 40px;
+	font-size: 30px;
+}
+
+a{
+	color: #404090;
+}
+
+.step {
+	width: 900px;
+	height: 700px;
+	padding: 100px;
+}
+
+
+ul{
+	margin-top: 40px;
+
+}
+
+pre.code {
+	border: 1px solid #e1e4e5;
+	background: #fff;
+	padding: 12px 12px;
+	color: #404040 !important;
+    font-family: "Incosolata","Consolata","Monaco",monospace;
+f
+}
+
+img {
+	margin-top: 40px;
+	max-height: 500px;
+}
+
+
+
+#step-1, .slidecenter{
+	height: auto;
+}
+
+
+img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.cm{color:#998 !important;font-style:italic}
+.cp{color:#999 !important;font-weight:bold}
+.c1{color:#998 !important;font-style:italic}
+.cs{color:#999 !important;font-weight:bold;font-style:italic}
+.gd{color:#000 !important;background-color:#fdd}
+.gd .x{color:#000 !important;background-color:#faa}
+.gr{color:#a00 !important}
+.gh{color:#999 !important}
+.gi{color:#000 !important;background-color:#dfd}
+.gi .x{color:#000 !important;background-color:#afa}
+.go{color:#888 !important}
+.gp{color:#555 !important}
+.gu{color:purple !important;font-weight:bold}
+.gt{color:#a00 !important}
+.kt{color:#458 !important;font-weight:bold}
+.k, .kn{color:#404040 !important}
+.m{color:#099 !important}
+.s{color:#d14 !important}
+.n{color:#333 !important}
+.na{color:teal !important}
+.nb{color:#0086b3 !important}
+.nc{color:#458 !important;font-weight:bold}
+.no{color:teal !important}
+.ni{color:purple !important}
+.ne{color:#900 !important;font-weight:bold}
+.nf{color:#900 !important;font-weight:bold}
+.nn{color:#555 !important}
+.nt{color:navy !important}
+.nv{color:teal !important}
+.w{color:#bbb !important}
+.mf{color:#099 !important}
+.mh{color:#099 !important}
+.mi{color:#099 !important}
+.mo{color:#099 !important}
+.sb{color:#d14 !important}
+.sc{color:#d14 !important}
+.sd{color:#d14 !important}
+.s2{color:#d14 !important}
+.se{color:#d14 !important}
+.sh{color:#d14 !important}
+.si{color:#d14 !important}
+.sx{color:#d14 !important}
+.sr{color:#009926 !important}
+.s1{color:#d14 !important}
+.ss{color:#990073 !important}
+.bp{color:#999 !important}
+.vc{color:teal !important}
+.vg{color:teal !important}
+.vi{color:teal !important}
+.il{color:#099 !important}
+.gc{color:#999 !important;background-color:#eaf2f5}

@@ -1,0 +1,4 @@
+python-slugify==0.0.7
+sphinx-rtd-theme==0.1.6
+invoke==0.8.2
+hovercraft==1.1
