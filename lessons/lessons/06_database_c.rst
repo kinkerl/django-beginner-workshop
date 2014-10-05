@@ -241,7 +241,7 @@ Models am admin registrieren
 Populate-Skript
 -----------------
 
-``core/populate.py``
+``populate.py``
 
 .. code-block:: python
 
@@ -249,7 +249,7 @@ Populate-Skript
        Project.objects.get_or_create(name="myProject")
        #....
        
-       for p in Projects.objects.all():
+       for p in Project.objects.all():
            print p
    
    if __name__ == '__main__':
