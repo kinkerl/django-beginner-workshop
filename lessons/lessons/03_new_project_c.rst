@@ -84,7 +84,7 @@ django installieren
 
 .. code-block:: console
 
-   $ pip install django==1.6.5
+   $ pip install django==1.8.5
    $ pip install psycopg2
    $ pip freeze
 
@@ -100,7 +100,7 @@ django installieren 2
 .. code-block:: console
 
    $ python -c "import django; print(django.get_version())"
-   1.6.5
+   1.8.5
 
 
 ----
@@ -130,20 +130,6 @@ Was wurde erstellt?
 
 ----
 
-settings.py
------------
-
-
-.. code-block:: python
-
-   import os
-   SETTINGS_DIR = os.path.dirname(__file__)
-   PROJECT_PATH = os.path.abspath(
-      os.path.join(SETTINGS_DIR, os.pardir))
-
-.. note::
-   Bitte immer ``os``-Funktionen nutzen wenn man mit Pfaden arbeitet.
-----
 
 
 runserver
@@ -162,13 +148,18 @@ runserver starten
 .. code-block:: console
 
    $ python manage.py runserver 0.0.0.0:8000   
-   Validating models...
-   
-   0 errors found
-   September 15, 2014 - 17:49:54
-   Django version 1.6.5, using settings 'portfolio.settings'
-   Starting development server at http://0.0.0.0:8000/
+   Performing system checks...
+
+   System check identified no issues (0 silenced).
+
+   You have unapplied migrations; your app may not work properly until they are applied.
+   Run 'python manage.py migrate' to apply them.
+
+   October 04, 2015 - 16:32:20
+   Django version 1.8.5, using settings 'portfolio.settings'
+   Starting development server at http://127.0.0.1:8000/
    Quit the server with CONTROL-C.
+
 
 ----
 
@@ -179,3 +170,7 @@ It worked!
 .. image:: ../_static/screenshots/django-startproject.png
     :width: 100%
 
+
+.. note::
+   Im runserver sieht man logs aller requests
+   Strg + C zum Beenden

@@ -4,7 +4,7 @@ django
 
 * MVT-Webframework (kein echtes MVC wie es in en-Wikipedia steht)
 * Python 2 (kein echter Support für Python 3)
-* Aktuelle Version 1.7
+* Aktuelle Version 1.8
 * Pluggability
 * Don't repeat yourself (DRY)
 * Introspection 
@@ -93,4 +93,4 @@ Bei Fragen
 --------------
 
 * Google
-* Offizielle Dokumentation: http://bit.ly/MLOchO
+* Offizielle Dokumentation: https://docs.djangoproject.com/

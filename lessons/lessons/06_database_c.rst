@@ -77,16 +77,18 @@ Models
 
 .. code-block:: python
 
+  class Kategorie(models.Model):
+      name = models.CharField(max_length=128, unique=True, help_text="Der Name")
+      def __unicode__(self):
+          return self.name
+          
   class Project(models.Model):
       category = models.ForeignKey("Kategorie", related_name="projects", null=True)
       name = models.CharField(max_length=128, unique=True)
       def __unicode__(self):
           return self.name
 
-  class Kategorie(models.Model):
-      name = models.CharField(max_length=128, unique=True, help_text="Der Name")
-      def __unicode__(self):
-          return self.name
+
 
 
 ----
@@ -104,7 +106,7 @@ Model Feld Typen
 * ...
 
 .. note::
-   https://docs.djangoproject.com/en/1.6/ref/models/fields/
+   https://docs.djangoproject.com/en/1.8/ref/models/fields/
 
 ----
 
@@ -116,6 +118,8 @@ Datenbank erstellen
    $ python manage.py syncdb
 
 .. note::
+   Reminder: Migrationen haben wir vorher deaktitviert. 
+   
    Syncdb erstellt nur ganze Models. Bei Änderungen muss das alte Model in der Datenbank erst gelöscht werden!
 
 ----
@@ -151,6 +155,10 @@ Shell debugging 2
    [] 
    
    >>> p = Project(name="Test")
+   
+   >>> print Project.objects.all()
+   [] 
+   
    >>> p.save()
    
    >>> print Project.objects.all()
@@ -169,7 +177,7 @@ Shell debugging 2
      
    * Chaining bei QuerySets
    * Field Lookups
-   * Genelle Informationen zum Query erstellen: https://docs.djangoproject.com/en/1.6/topics/db/queries/
+   * Genelle Informationen zum Query erstellen: https://docs.djangoproject.com/en/1.8/topics/db/queries/
 
 ----
 
@@ -181,7 +189,7 @@ django Admin
 ----------------
 
 .. note::
-  Über Introspection, vergleiche Ruby on Rails.
+  Der Admin funktioniert über Introspection im Gegensatz zu zum Beispiel Ruby on Rails.
 
 ----
 
@@ -264,6 +272,8 @@ Populate-Skript
 
 Der Adminuser im Template
 --------------------------
+
+``core/templates/index.html``
 
 .. code-block:: html
 

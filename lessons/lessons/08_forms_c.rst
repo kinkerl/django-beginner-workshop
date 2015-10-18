@@ -19,7 +19,7 @@ forms.py und ModelsForm
 .. code-block:: python
 
    from django import forms
-   from cpre.models import Contact
+   from core.models import Contact
    
    class ContactForm(forms.ModelForm):
        class Meta:
@@ -52,7 +52,7 @@ Form: die View Dazu
               print form.errors
       else:
           form = ContactForm()
-      return render_to_response('core/add_contact.html', {'form': form}, context)
+      return render_to_response('add_contact.html', {'form': form}, context)
 
 
 ----
@@ -89,16 +89,3 @@ Form: Das Template
 
 .. note::
    CSRF: https://docs.djangoproject.com/en/1.6/ref/contrib/csrf/
-
-----
-
-
-
-
-
-:class: slidecenter
-
-Form: Demo!
------------
-
-

@@ -13,6 +13,8 @@ Models im Template
   * Verlinkung von Liste
 
 
+----
+
 
 Models in Templates: View Liste
 -------------------------------
@@ -33,7 +35,7 @@ Models in Templates: View Liste
 Template
 ---------------------------
 
-``templates/core/index.html``
+``core/templates/index.html``
 
 .. code-block:: html
 
@@ -67,7 +69,7 @@ Model Detailseite: View Detail
        context = RequestContext(request)
        project = get_object_or_404(Project, id=project_id)
        context_dict = {'project': project}
-       return render_to_response('core/project.html', context_dict,    context)
+       return render_to_response('project.html', context_dict,    context)
 
 .. note::
    Siehe auch get_list_or_404
@@ -97,7 +99,7 @@ Model Detailseite: URL-Mapping
 Model Detailseite: Template
 ---------------------------
 
-``templates/core/project.html``
+``core/templates/project.html``
 
 .. code-block:: html
 
@@ -142,6 +144,67 @@ Verlinkung im Template
 
 ----
 
+
+Asset Management
+----------------
+
+Wir bauen einen einfachen Bildupload 
+
+----
+
+Asset Management 1
+------------------
+
+``core/models.py``
+
+.. code-block:: python
+
+    image = models.ImageField(upload_to='project')
+       
+----
+
+Asset Management 2
+------------------
+
+``portfolio/settings.py``
+
+.. code-block:: python
+
+   MEDIA_URL = '/media/'
+   MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+----
+   
+Asset Management 3
+------------------
+
+``portfolio/urls.py``
+
+.. code-block:: python
+
+   from django.conf.urls.static import static
+   from django.conf import settings
+
+   if settings.DEBUG:
+       urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+   
+   
+----   
+
+
+Asset Management 4
+------------------
+
+``core/templates/index.html``
+
+.. code-block:: html
+
+
+    <li>{{ project.name }}<img src="/media/{{ project.image }}"></li>
+       
+       
+   
+----
 
 Übung: Projekt-Kategorien
 -------------------------

@@ -17,8 +17,18 @@ Die erste "App" erstellen
 Was wurde erstellt?
 ---------------------
 
-.. note::
-   live demo
+----
+
+
+:class: slidecenter
+
+migrations deaktivieren
+------------------------
+
+* Wir nutzen für diesen Workshop migrations nicht
+* unter ``core`` den ``migrations`` Ordner löschen
+
+
 
 ----
 
@@ -66,7 +76,8 @@ URL-Mapping
 ------------
 
 * URLs sind so wichtig wie Code
-* Keine IDs! Slugs!
+* Keine IDs => 123 
+* Nur Slugs => meine-projektseite
 * http://en.wikipedia.org/wiki/Semantic_URL
 
 
@@ -89,16 +100,27 @@ App urls.py
    Viele regex Möglichkeiten, unter anderem mit Variablenzuweisung. 
 
 
+   
+----
+   
+
 Importieren in der globalen Datei
 ----------------------------------
 
-``urls.py``
+``portfolio/urls.py``
 
 .. code-block:: python
 
-   urlpatterns = patterns('',
-       url(r'^core/', include('core.urls')),
-   )
+   from django.conf.urls import include, url
+   from django.contrib import admin
+   from core import urls as  core_urls
+
+   urlpatterns = [
+       url(r'^admin/', include(admin.site.urls)),
+       url(r'^core/', include(core_urls))
+   ]
+
+
 
 .. note::
    In der realen Welt wird man das vermutlich nicht so sauber trennen. Hier für den Workshop arbeiten wir aber so sauber wie möglich!

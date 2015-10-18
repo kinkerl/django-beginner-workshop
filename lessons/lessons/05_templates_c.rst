@@ -9,6 +9,8 @@ Template Language
 * Wurde von vielen kopiert
 
 
+----
+
 
 Template Language
 ------------------
@@ -23,21 +25,6 @@ Template Language
    * Man kann sehr einfach eigene Tags/Filter schreiben https://docs.djangoproject.com/en/1.7/ref/templates/builtins/
 
 
-----
-
-Template auffindbar machen
----------------------------
-
-``portfolio/settings.py``
-
-.. code-block:: python
-
-   TEMPLATE_DIRS = (
-       # Always use forward slashes, even on Windows.   
-       # Don't forget to use absolute paths, not relative paths.   
-       os.path.join(BASE_DIR, 'templates'),
-   )
-
 
 ----
 
@@ -45,7 +32,7 @@ Template auffindbar machen
 Template-HTML
 ------------------
 
-``templates/core/index.html``
+``core/templates/index.html``
 
 .. code-block:: html
 
@@ -77,7 +64,7 @@ Template in der View verwenden
    def index(request):
        context = RequestContext(request)
        context_dict = {'message': "Ich komme aus dem context_dict"}
-       return render_to_response('core/index.html', context_dict,    context)
+       return render_to_response('index.html', context_dict,    context)
 
 
 
@@ -92,14 +79,8 @@ Statische Medieninhalte
 
 .. code-block:: python
 
+   STATIC_URL = '/static/'
 
-   STATIC_PATH = os.path.join(PROJECT_PATH,'static')
-   
-   STATIC_URL = '/static/' # You may find this is already defined as    such.   
-   
-   STATICFILES_DIRS = (
-       STATIC_PATH,
-   )
 
 .. note::
 	 Statische Inhalte sind anders zu behandeln als Medieninhalte.
@@ -109,16 +90,18 @@ Statische Medieninhalte
 Im Template
 ------------
 
-``templates/core/index.html``
+``core/templates/index.html``
 
 .. code-block:: html
 
 
-   {% load static %}
+   {% load staticfiles %}
    
-    <img src="{% static "mylogo.jpg" %}" alt="Picture" />
+    <img src="{% static 'example.jpg' %}" alt="Picture" />
 
-
+.. note::
+         Das Bild dazu muss unter core/static/example.jpg liegen.
+    
 ----
 
 Assets einbinden
@@ -126,37 +109,8 @@ Assets einbinden
 
 .. code-block:: html
 
-        <link rel="stylesheet" href="{% static "css/base.css" %}" /> <!-- CSS -->
-        <script src="{% static "js/jquery.js" %}"></script> <!-- JavaScript -->
-
-----
-
-Medieninhalte
-----------------
-
-.. code-block:: python
-
-   MEDIA_URL = '/media/'
-   MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media') 
-
-
-----
-
-
-
-Ausliefern von Medieninhalten
------------------------------
-
-``urls.py``
-
-.. code-block:: python
-
-   from django.conf import settings
-   
-   if settings.DEBUG:
-       urlpatterns += patterns(
-           'django.views.static', (r'media/(?P<path>.*)', 'serve',
-           {'document_root': settings.MEDIA_ROOT}), )
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        <script src="{% static 'js/jquery.js' %}"></script>
 
 
 ----
@@ -165,5 +119,6 @@ Ausliefern von Medieninhalten
 Übung: "Über mich"-Seite
 -------------------------
 
-.. note::
-   https://docs.djangoproject.com/en/dev/ref/templates/builtins/#url
+* Entwickele eine eigene "über mich"-Seite
+* Url verlinkungen mit dem URL Tag:  
+  https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#url
