@@ -74,7 +74,7 @@ Form: Das Template
 
 .. code-block:: html
 
-    <form id="cform" method="post" action="/core/contact/">
+    <form id="cform" method="post">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %}
             {{ hidden }}

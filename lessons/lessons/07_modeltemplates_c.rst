@@ -155,6 +155,8 @@ Wir bauen einen einfachen Bildupload
 Asset Management 1
 ------------------
 
+Neues Attribut hinzufügen
+
 ``core/models.py``
 
 .. code-block:: python
@@ -166,16 +168,46 @@ Asset Management 1
 Asset Management 2
 ------------------
 
+Settings Überprüfen
+
 ``portfolio/settings.py``
 
 .. code-block:: python
 
    MEDIA_URL = '/media/'
    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+   
+   
+Asset Management 3
+------------------
+
+Template Context Processor setzen für Media damit {{MEDIA_URL}} auch im Template zur Verfügung steht.
+
+``portfolio/settings.py``
+
+.. code-block:: python
+
+   TEMPLATES = [
+       {
+           'BACKEND': 'django.template.backends.django.DjangoTemplates',
+           'DIRS': [],
+           'APP_DIRS': True,
+           'OPTIONS': {
+               'context_processors': [
+                   ...
+                   'django.template.context_processors.media',
+                   ...
+               ],
+           },
+       },
+   ]   
+   
+   
+   
 
 ----
    
-Asset Management 3
+Asset Management 4
 ------------------
 
 ``portfolio/urls.py``
@@ -192,7 +224,7 @@ Asset Management 3
 ----   
 
 
-Asset Management 4
+Asset Management 5
 ------------------
 
 ``core/templates/index.html``
@@ -200,7 +232,7 @@ Asset Management 4
 .. code-block:: html
 
 
-    <li>{{ project.name }}<img src="/media/{{ project.image }}"></li>
+    <li>{{ project.name }}<img src="{{ MEDIA_URL }}{{ project.image }}"></li>
        
        
    
