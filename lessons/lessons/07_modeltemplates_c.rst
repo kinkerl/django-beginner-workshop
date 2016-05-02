@@ -227,12 +227,14 @@ Asset Management 4
 Asset Management 5
 ------------------
 
-``core/templates/index.html``
+Auf der Detailseite das Bild hinzufügen
+
+``core/templates/project.html``
 
 .. code-block:: html
 
 
-    <li>{{ project.name }}<img src="{{ MEDIA_URL }}{{ project.image }}"></li>
+    <img src="{{ MEDIA_URL }}{{ project.image }}">
        
        
    

@@ -44,7 +44,7 @@ Form: die View Dazu
   def add_contact(request):
       context = RequestContext(request)
       if request.method == 'POST':
-          form = ContactForm(request.POST)
+          form = ContactForm(request.POST, request.FILES)
           if form.is_valid():
               form.save(commit=True)
               return index(request)
@@ -74,7 +74,7 @@ Form: Das Template
 
 .. code-block:: html
 
-    <form id="cform" method="post">
+    <form id="cform" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %}
             {{ hidden }}

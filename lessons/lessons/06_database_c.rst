@@ -264,6 +264,8 @@ Populate-Skript
        print "Starting Population script..."
        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 
            'portfolio.settings')   
+       import django
+       django.setup()
        from core.models import Project
        populate()
 

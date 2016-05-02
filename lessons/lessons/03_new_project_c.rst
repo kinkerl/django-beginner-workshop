@@ -85,7 +85,8 @@ django installieren
 .. code-block:: console
 
    $ pip install django==1.8.5
-   $ pip install psycopg2
+   $ pip install psycopg2 # Für Postgres
+   $ pip install Pillow   # Für Bilder
    $ pip freeze
 
 .. warning::
