@@ -13,7 +13,7 @@ django beginner workshop
    lessons/06_database_h.rst
    lessons/07_modeltemplates_h.rst
    lessons/08_forms_h.rst
-
+   lessons/09_outro_h.rst
 
 
 .. comment:

@@ -5,11 +5,11 @@ from slugify import slugify
 
 project = u'Django Beginner Workshop'
 author = u'Dennis Schwertel <s@digitalkultur.net>'
-year = "2014"
+year = "2016"
 description = 'Another tutorial for beginners.'
 
-version = '1.0'
-release = '1.0'
+version = '1.3'
+release = '1.3'
 
 master_doc = 'index'
 exclude_patterns = ['_build', 'impress/index_impress.rst', 'lessons/*_c.rst']

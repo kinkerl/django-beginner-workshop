@@ -21,7 +21,6 @@ Template Language
 
 
 .. note::
-   * Die Logik dahinter ist nicht wie bei z.B. PHP-includes
    * Man kann sehr einfach eigene Tags/Filter schreiben https://docs.djangoproject.com/en/1.7/ref/templates/builtins/
 
 
@@ -37,7 +36,7 @@ Template-HTML
 .. code-block:: html
 
    <!DOCTYPE html>
-   <html>   
+   <html>
        <head>
            <title>Portfolio</title>
        </head>
@@ -60,7 +59,7 @@ Template in der View verwenden
 
    from django.template import RequestContext
    from django.shortcuts import render_to_response
-   
+
    def index(request):
        context = RequestContext(request)
        context_dict = {'message': "Ich komme aus dem context_dict"}
@@ -96,12 +95,12 @@ Im Template
 
 
    {% load staticfiles %}
-   
+
     <img src="{% static 'example.jpg' %}" alt="Picture" />
 
 .. note::
          Das Bild dazu muss unter core/static/example.jpg liegen.
-    
+
 ----
 
 Assets einbinden
@@ -120,5 +119,5 @@ Assets einbinden
 -------------------------
 
 * Entwickele eine eigene "über mich"-Seite
-* Url verlinkungen mit dem URL Tag:  
+* Url verlinkungen mit dem URL Tag:
   https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#url

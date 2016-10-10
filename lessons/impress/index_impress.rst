@@ -2,6 +2,7 @@ Intro
 ===============
 
 .. title:: django beginner workshop
+
 :css: rtd.css
 :data-transition-duration: 1
 

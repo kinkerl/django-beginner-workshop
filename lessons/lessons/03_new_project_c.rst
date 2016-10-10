@@ -3,8 +3,8 @@ Ein Portfolio
 --------------------------
 
 * Seiten
- 
-   * Startseite mit Projektübersicht 
+
+   * Startseite mit Projektübersicht
    * Projektdetailseite
    * Kontaktformular
 
@@ -18,12 +18,12 @@ Datenmodell für unsere Seite
 
 .. comment:
    http://www.nomnoml.com/#view/#direction:%20right%0A#edgeMargin:10%0A#zoom:1.5%0A%0A%0A[Kategorie|%0A%20%20Name:%20CharField%0A|]%0A[Projekt|%0A%20%20Name:%20CharField%0A%20%20Beschreibung:%20TextField%0A|]%0A[Kategorie]o-[Projekt]%0A%0A[Kontaktanfrage|%0A%20%20Absender:%20EmailField%0A%20%20Text:%20TextField%0A|]
-   
+
    #direction: right
    #edgeMargin:10
    #zoom:1.5
-   
-   
+
+
    [Kategorie|
      name: CharField
    |]
@@ -32,7 +32,7 @@ Datenmodell für unsere Seite
      copy: TextField
    |]
    [Kategorie]o-[Projekt]
-   
+
    [Kontaktanfrage|
      sender: EmailField
      copy: TextField
@@ -65,14 +65,14 @@ venv einrichten
 
    user@hostname:$ source venv/bin/activate
 
-   (venv)user@hostname:$ deactivate 
+   (venv)user@hostname:$ deactivate
 
    user@hostname:$
 
 .. note::
-   Man kann auch virtualenv wrapper verwenden. 
-   Je nach Situation kann dieser Arbeit abnehmen. 
-   
+   Man kann auch virtualenv wrapper verwenden.
+   Je nach Situation kann dieser Arbeit abnehmen.
+
    http://virtualenvwrapper.readthedocs.org/en/latest/
 
 ----
@@ -84,7 +84,7 @@ django installieren
 
 .. code-block:: console
 
-   $ pip install django==1.8.5
+   $ pip install django==1.8.15
    $ pip install psycopg2 # Für Postgres
    $ pip install Pillow   # Für Bilder
    $ pip freeze
@@ -101,7 +101,7 @@ django installieren 2
 .. code-block:: console
 
    $ python -c "import django; print(django.get_version())"
-   1.8.5
+   1.8.15
 
 
 ----
@@ -123,7 +123,7 @@ Was wurde erstellt?
 
 .. note::
    Besonders wichtig sind:
-   
+
      * manage.py
      * settings.py
      * urly.py
@@ -138,7 +138,7 @@ runserver
 
 * Einfacher debugging Server
 * NICHT(!) produktiv nutzen
-* autoreload (fehlerhaft) 
+* autoreload (fehlerhaft)
 
 
 ----
@@ -148,7 +148,7 @@ runserver starten
 
 .. code-block:: console
 
-   $ python manage.py runserver 0.0.0.0:8000   
+   $ python manage.py runserver 0.0.0.0:8000
    Performing system checks...
 
    System check identified no issues (0 silenced).
@@ -156,8 +156,8 @@ runserver starten
    You have unapplied migrations; your app may not work properly until they are applied.
    Run 'python manage.py migrate' to apply them.
 
-   October 04, 2015 - 16:32:20
-   Django version 1.8.5, using settings 'portfolio.settings'
+   October 04, 2016 - 16:32:20
+   Django version 1.8.15, using settings 'portfolio.settings'
    Starting development server at http://127.0.0.1:8000/
    Quit the server with CONTROL-C.
 

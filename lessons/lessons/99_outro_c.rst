@@ -21,4 +21,3 @@ Wie man mich erreichen kann
 
 * Privat: s@digitalkultur.net
 * S&V: d.schwertel@s-v.de
-

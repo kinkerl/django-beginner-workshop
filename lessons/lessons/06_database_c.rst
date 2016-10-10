@@ -13,6 +13,8 @@ Datenbank
 * MySQL
 * SQLite
 * Oracle
+* (MSSQL)
+* (NOSQL)
 
 
 ----
@@ -23,7 +25,7 @@ SQLite
 ``portfolio/settings.py``
 
 .. code-block:: python
-   
+
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.sqlite3',
@@ -46,13 +48,13 @@ PostgreSQL
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'db_name',                      
+           'NAME': 'db_name',
            'USER': 'db_user',
            'PASSWORD': 'db_user_password',
            'HOST': ''
        }
    }
-   
+
 
 ----
 
@@ -81,7 +83,7 @@ Models
       name = models.CharField(max_length=128, unique=True, help_text="Der Name")
       def __unicode__(self):
           return self.name
-          
+
   class Project(models.Model):
       category = models.ForeignKey("Kategorie", related_name="projects", null=True)
       name = models.CharField(max_length=128, unique=True)
@@ -118,8 +120,8 @@ Datenbank erstellen
    $ python manage.py syncdb
 
 .. note::
-   Reminder: Migrationen haben wir vorher deaktitviert. 
-   
+   Reminder: Migrationen haben wir vorher deaktitviert.
+
    Syncdb erstellt nur ganze Models. Bei Änderungen muss das alte Model in der Datenbank erst gelöscht werden!
 
 ----
@@ -150,20 +152,20 @@ Shell debugging 2
 .. code-block:: python
 
    >>> from core.models import Project
-   
+
    >>> print Project.objects.all()
-   [] 
-   
+   []
+
    >>> p = Project(name="Test")
-   
+
    >>> print Project.objects.all()
-   [] 
-   
+   []
+
    >>> p.save()
-   
+
    >>> print Project.objects.all()
    [<Project: Test>]
-   
+
    >>> quit()
 
 .. note::
@@ -174,7 +176,7 @@ Shell debugging 2
      * get(...)
      * order()
      * save()
-     
+
    * Chaining bei QuerySets
    * Field Lookups
    * Genelle Informationen zum Query erstellen: https://docs.djangoproject.com/en/1.8/topics/db/queries/
@@ -211,7 +213,7 @@ django Admin: aktivieren
    )
 
 .. note::
-   Bei neuen django Installationen ist der Admin schon aktiviert. 
+   Bei neuen django Installationen ist der Admin schon aktiviert.
 
 ----
 
@@ -222,7 +224,7 @@ django Admin Demo
 ------------------
 
 .. note::
-      
+
     /admin
 
 
@@ -236,12 +238,12 @@ Models am admin registrieren
 ``core/admin.py``
 
 .. code-block:: python
-   
+
    from django.contrib import admin
    from core.models import Project
-   
+
    admin.site.register(Project)
-   
+
 ----
 
 
@@ -256,14 +258,14 @@ Populate-Skript
    def populate():
        Project.objects.get_or_create(name="myProject")
        #....
-       
+
        for p in Project.objects.all():
            print p
-   
+
    if __name__ == '__main__':
        print "Starting Population script..."
-       os.environ.setdefault('DJANGO_SETTINGS_MODULE', 
-           'portfolio.settings')   
+       os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+           'portfolio.settings')
        import django
        django.setup()
        from core.models import Project

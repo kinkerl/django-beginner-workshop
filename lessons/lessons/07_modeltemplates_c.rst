@@ -29,7 +29,7 @@ Models in Templates: View Liste
       project_list = Project.objects.all()
       context_dict = {'projects': project_list}
       #...
-   
+
 ----
 
 Template
@@ -64,7 +64,7 @@ Model Detailseite: View Detail
    from core.models import Project
    from django.template import RequestContext
    from django.shortcuts import render_to_response
-      
+
    def project(request, project_id):
        context = RequestContext(request)
        project = get_object_or_404(Project, id=project_id)
@@ -84,10 +84,10 @@ Model Detailseite: URL-Mapping
 
 .. code-block:: python
 
-    url(r'^project/(?P<project_id>\d+)/$', views.project, name='project'),) 
+    url(r'^project/(?P<project_id>\d+)/$', views.project, name='project'),)
 
 .. note::
-   Weitere Beispiele: 
+   Weitere Beispiele:
    * (?P<project_name>\w+)
    * (?P<year>\d{4})
    * (?P<month>[a-z]{3})
@@ -107,10 +107,10 @@ Model Detailseite: Template
    <html>
        <head>
            <title>Project</title>
-       </head>   
+       </head>
        <body>
            <h1>{{ project.name }}</h1>
-           <p>{{ project.copy }}</p>           
+           <p>{{ project.copy }}</p>
        </body>
    </html>
 
@@ -129,7 +129,7 @@ Model URLs Funktion am Model
        return reverse('core.views.project', args=[str(self.id)])
 
 .. note::
-   Um Objekte zu referenzieren, ist es sehr hilfreich, die Objekte um Funktionen zu erweitern wie ``get_absolute_url``.  
+   Um Objekte zu referenzieren, ist es sehr hilfreich, die Objekte um Funktionen zu erweitern wie ``get_absolute_url``.
 
 
 ----
@@ -148,7 +148,7 @@ Verlinkung im Template
 Asset Management
 ----------------
 
-Wir bauen einen einfachen Bildupload 
+Wir bauen einen einfachen Bildupload
 
 ----
 
@@ -162,7 +162,7 @@ Neues Attribut hinzufügen
 .. code-block:: python
 
     image = models.ImageField(upload_to='project')
-       
+
 ----
 
 Asset Management 2
@@ -176,8 +176,8 @@ Settings Überprüfen
 
    MEDIA_URL = '/media/'
    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-   
-   
+
+
 Asset Management 3
 ------------------
 
@@ -200,13 +200,13 @@ Template Context Processor setzen für Media damit {{MEDIA_URL}} auch im Templat
                ],
            },
        },
-   ]   
-   
-   
-   
+   ]
+
+
+
 
 ----
-   
+
 Asset Management 4
 ------------------
 
@@ -219,9 +219,9 @@ Asset Management 4
 
    if settings.DEBUG:
        urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-   
-   
-----   
+
+
+----
 
 
 Asset Management 5
@@ -235,9 +235,9 @@ Auf der Detailseite das Bild hinzufügen
 
 
     <img src="{{ MEDIA_URL }}{{ project.image }}">
-       
-       
-   
+
+
+
 ----
 
 Übung: Projekt-Kategorien

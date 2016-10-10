@@ -1,16 +1,15 @@
 
-django 
+django
 ---------
 
 * MVT-Webframework (kein echtes MVC wie es in en-Wikipedia steht)
-* Python 2 (kein echter Support für Python 3)
-* Aktuelle Version 1.8
+* Python 2/3
+* Aktuelle Version 1.10, LTS 1.8
 * Pluggability
 * Don't repeat yourself (DRY)
-* Introspection 
+* Introspection
 
 .. note::
-   * Das "d" ist stumm
    * Benannt nach Django Reinhardt, Gitarrist
    * Kommt aus der Zeitungswelt
 
@@ -25,9 +24,6 @@ Wo wird django genutzt?
 * Instagram
 * Mozilla
 * NASA
-
-.. note:: 
-   Aber leider nicht Mainstream.
 
 ----
 
@@ -45,11 +41,6 @@ Was beinhaltet django?
 * ...
 
 
-.. note:: 
-   Wir bauen langsam darauf auf.
-   Wir lassen viele Features erst mal weg.
-
-
 ----
 
 (Stark vereinfachter) Requestablauf
@@ -59,11 +50,11 @@ Was beinhaltet django?
 
 .. comment:
    http://www.nomnoml.com/#direction:%20right%0A#edgeMargin:%2010%0A#zoom:1.5%0A%0A[<start>st]->[runserver]%0A[runserver]->[Middlewares]%0A[Middlewares]->[URL-Dispatcher]%0A[URL-Dispatcher]->[View]%0A[View]--[Models]%0A[Models]-[<database>DB]%0A[View]->[Template-Engine]%0A[Template-Engine]--[Models]%0A[Template-Engine]->[Middlewares]%0A[Middlewares]->[runserver]%0A[runserver]->[<start>st]
-   
+
    #direction: right
    #edgeMargin: 10
    #zoom:1.5
-   
+
    [<start>st]->[runserver]
    [runserver]->[Middlewares]
    [Middlewares]->[URL-Dispatcher]
@@ -80,9 +71,9 @@ Was beinhaltet django?
 .. image:: ../_static/django_structure.png
     :width: 100%
 
-.. note:: 
-   Ein Request Object hat alle Informationen zu dem Request. 
-   Unter anderem Context-Variablen, Post/Get, URL, Languages.  
+.. note::
+   Ein Request Object hat alle Informationen zu dem Request.
+   Unter anderem Context-Variablen, Post/Get, URL, Languages.
 
 
 
