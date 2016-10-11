@@ -202,13 +202,12 @@ django Admin: aktivieren
 .. code-block:: python
 
    INSTALLED_APPS = (
-       'django.contrib.admin',
+       'django.contrib.admin', #hier
        'django.contrib.auth',
        'django.contrib.contenttypes',
        'django.contrib.sessions',
        'django.contrib.messages',
        'django.contrib.staticfiles',
-       'django.contrib.admin',         #hier
        'core',
    )
 
