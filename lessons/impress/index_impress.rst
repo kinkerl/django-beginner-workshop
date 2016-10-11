@@ -7,6 +7,16 @@ Intro
 :data-transition-duration: 1
 
 
+:class: slidecenter
+
+django beginner workshop
+------------------------
+
+----
+
+.. include:: lessons/01_intro_c.rst
+
+----
 
 .. include:: lessons/02_basics_c.rst
 
