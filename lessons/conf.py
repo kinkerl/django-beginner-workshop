@@ -8,8 +8,8 @@ author = u'Dennis Schwertel <s@digitalkultur.net>'
 year = "2016"
 description = 'Another tutorial for beginners.'
 
-version = '1.3'
-release = '1.3'
+version = '1.3.1'
+release = '1.3.1'
 
 master_doc = 'index'
 exclude_patterns = ['_build', 'impress/index_impress.rst', 'lessons/*_c.rst']
