@@ -58,12 +58,10 @@ Template in der View verwenden
 .. code-block:: python
 
    from django.template import RequestContext
-   from django.shortcuts import render_to_response
 
    def index(request):
-       context = RequestContext(request)
        context_dict = {'message': "Ich komme aus dem context_dict"}
-       return render_to_response('index.html', context_dict,    context)
+       return render(request, 'index.html', context_dic)
 
 
 
@@ -120,4 +118,4 @@ Assets einbinden
 
 * Entwickele eine eigene "über mich"-Seite
 * Url verlinkungen mit dem URL Tag:
-  https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#url
+  https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#url

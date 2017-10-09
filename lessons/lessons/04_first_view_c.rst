@@ -17,18 +17,6 @@ Die erste "App" erstellen
 Was wurde erstellt?
 ---------------------
 
-----
-
-
-:class: slidecenter
-
-migrations deaktivieren
-------------------------
-
-* Wir nutzen für diesen Workshop migrations nicht
-* unter ``core`` den ``migrations`` Ordner löschen
-
-
 
 ----
 
@@ -61,9 +49,9 @@ Die erste View
 In ``core/views.py``:
 
 .. code-block:: python
-   
+
    from django.http import HttpResponse
-   
+
    def index(request):
        return HttpResponse("hello world!")
 
@@ -76,7 +64,7 @@ URL-Mapping
 ------------
 
 * URLs sind so wichtig wie Code
-* Keine IDs => 123 
+* Keine IDs => 123
 * Nur Slugs => meine-projektseite
 * http://en.wikipedia.org/wiki/Semantic_URL
 
@@ -90,19 +78,21 @@ App urls.py
 
 .. code-block:: python
 
-   from django.conf.urls import patterns, url
+   from django.conf.urls import url
    from core import views
-   
-   urlpatterns = patterns('',
-           url(r'^$', views.index, name='index'))
+
+   urlpatterns = [
+      url(r'^$', views.index, name='index')
+   ]
+
 
 .. note::
-   Viele regex Möglichkeiten, unter anderem mit Variablenzuweisung. 
+   Viele regex Möglichkeiten, unter anderem mit Variablenzuweisung.
 
 
-   
+
 ----
-   
+
 
 Importieren in der globalen Datei
 ----------------------------------

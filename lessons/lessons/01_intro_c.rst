@@ -4,7 +4,7 @@ Wer bin ich
 
 * Dennis Schwertel
 * Diplom Medieninformatik
-* Senior Developer bei Scholz und Volkmer
+* Lead Architect bei Scholz und Volkmer
 
 
 ----
@@ -37,7 +37,7 @@ Technologie-Stack
 * django / django-cms
 * Celery
 * virtualenv
-* vagrant
+* vagrant, docker
 
 ----
 

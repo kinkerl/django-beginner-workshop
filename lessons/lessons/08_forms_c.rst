@@ -20,7 +20,7 @@ forms.py und ModelsForm
 
    from django import forms
    from core.models import Contact
-   
+
    class ContactForm(forms.ModelForm):
        class Meta:
            model = Contact
@@ -28,7 +28,7 @@ forms.py und ModelsForm
 
 
 .. note::
-   Man KANN jedes Feld einzeln definieren. Das machen wir aber nicht. 
+   Man KANN jedes Feld einzeln definieren. Das machen wir aber nicht.
 
 
 ----
@@ -52,7 +52,7 @@ Form: die View Dazu
               print form.errors
       else:
           form = ContactForm()
-      return render_to_response('add_contact.html', {'form': form}, context)
+      return render(request, 'add_contact.html', {'form': form})
 
 
 ----
@@ -65,8 +65,8 @@ Form: URL-Mapping
 
 .. code-block:: python
 
-   url(r'^contact/$', views.add_contact, name='add_contact'), 
-   
+   url(r'^contact/$', views.add_contact, name='add_contact'),
+
 ----
 
 Form: Das Template

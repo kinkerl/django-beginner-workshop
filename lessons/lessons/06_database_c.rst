@@ -117,24 +117,24 @@ Datenbank erstellen
 
 .. code-block:: console
 
-   $ python manage.py syncdb
-
-.. note::
-   Reminder: Migrationen haben wir vorher deaktitviert.
-
-   Syncdb erstellt nur ganze Models. Bei Änderungen muss das alte Model in der Datenbank erst gelöscht werden!
+   $ python manage.py migrate
 
 ----
-
-Erstelles SQL
---------------------------
 
 .. code-block:: console
 
-   $ python manage.py sql core
-
+   $ python manage.py makemigration core
 
 ----
+
+
+.. code-block:: console
+
+   $ python manage.py migrate
+
+----
+
+
 
 Shell debugging
 ----------------
@@ -179,7 +179,7 @@ Shell debugging 2
 
    * Chaining bei QuerySets
    * Field Lookups
-   * Genelle Informationen zum Query erstellen: https://docs.djangoproject.com/en/1.8/topics/db/queries/
+   * Genelle Informationen zum Query erstellen: https://docs.djangoproject.com/en/1.11/topics/db/queries/#field-lookups
 
 ----
 
@@ -254,6 +254,8 @@ Populate-Skript
 
 .. code-block:: python
 
+   import os
+   
    def populate():
        Project.objects.get_or_create(name="myProject")
        #....

@@ -2,9 +2,9 @@
 django
 ---------
 
-* MVT-Webframework (kein echtes MVC wie es in en-Wikipedia steht)
+* MVT-Webframework
 * Python 2/3
-* Aktuelle Version 1.10, LTS 1.8
+* Aktuelle Version 1.11 LTS
 * Pluggability
 * Don't repeat yourself (DRY)
 * Introspection

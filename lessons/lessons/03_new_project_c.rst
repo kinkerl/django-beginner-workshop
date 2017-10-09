@@ -84,7 +84,7 @@ django installieren
 
 .. code-block:: console
 
-   $ pip install django==1.8.15
+   $ pip install django==1.11.*
    $ pip install psycopg2 # Für Postgres
    $ pip install Pillow   # Für Bilder
    $ pip freeze
@@ -156,8 +156,8 @@ runserver starten
    You have unapplied migrations; your app may not work properly until they are applied.
    Run 'python manage.py migrate' to apply them.
 
-   October 04, 2016 - 16:32:20
-   Django version 1.8.15, using settings 'portfolio.settings'
+   October 04, 2017 - 16:32:20
+   Django version 1.11.6, using settings 'portfolio.settings'
    Starting development server at http://127.0.0.1:8000/
    Quit the server with CONTROL-C.
 

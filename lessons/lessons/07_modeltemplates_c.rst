@@ -63,13 +63,11 @@ Model Detailseite: View Detail
    from django.shortcuts import get_object_or_404
    from core.models import Project
    from django.template import RequestContext
-   from django.shortcuts import render_to_response
 
    def project(request, project_id):
-       context = RequestContext(request)
        project = get_object_or_404(Project, id=project_id)
        context_dict = {'project': project}
-       return render_to_response('project.html', context_dict,    context)
+       return render(request, 'project.html', context_dict)
 
 .. note::
    Siehe auch get_list_or_404
@@ -126,7 +124,7 @@ Model URLs Funktion am Model
 
    def get_absolute_url(self):
        from django.core.urlresolvers import reverse
-       return reverse('core.views.project', args=[str(self.id)])
+       return reverse('project', args=[str(self.id)])
 
 .. note::
    Um Objekte zu referenzieren, ist es sehr hilfreich, die Objekte um Funktionen zu erweitern wie ``get_absolute_url``.
