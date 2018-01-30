@@ -123,7 +123,7 @@ Datenbank erstellen
 
 .. code-block:: console
 
-   $ python manage.py makemigration core
+   $ python manage.py makemigrations core
 
 ----
 
